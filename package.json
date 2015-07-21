@@ -1,0 +1,19 @@
+{
+  "name": "page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "$(npm bin)/browserify src/index.js -o index.js -t babelify"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^11.0.0"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.3",
+    "browserify": "^11.0.0"
+  }
+}
