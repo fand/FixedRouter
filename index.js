@@ -66,5 +66,5 @@ var Router = (function (_EventEmitter) {
     return Router;
 })(_events2['default']);
 
-exports['default'] = Router;
+exports['default'] = new Router();
 module.exports = exports['default'];

@@ -33,4 +33,4 @@ class Router extends EventEmitter {
     }
 }
 
-export default Router;
+export default new Router();
