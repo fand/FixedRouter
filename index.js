@@ -38,22 +38,20 @@ var Router = (function (_EventEmitter) {
 
             return new Promise(function (resolve) {
                 _this.once(EVENT(pageID), function () {
-                    _this.routes[pageID](function () {
-                        return resolve(true);
-                    });
+                    resolve(_this.routes[pageID]);
                 });
             });
         }
     }, {
         key: 'selectRoute',
         value: function selectRoute(pageID) {
-            var controller = this.getController(pageID);
+            var promise = this.getController(pageID);
 
             if (this.routes[pageID]) {
                 this.emit(EVENT(pageID));
             }
 
-            return controller();
+            return promise;
         }
     }, {
         key: 'register',

@@ -12,19 +12,19 @@ class Router extends EventEmitter {
     getController (pageID) {
         return new Promise((resolve) => {
             this.once(EVENT(pageID), () => {
-                this.routes[pageID](() => resolve(true));
+                resolve(this.routes[pageID]);
             });
         });
     }
 
     selectRoute (pageID) {
-      var controller = this.getController(pageID);
+        let promise = this.getController(pageID);
 
-      if (this.routes[pageID]) {
-          this.emit(EVENT(pageID));
-      }
+        if (this.routes[pageID]) {
+            this.emit(EVENT(pageID));
+        }
 
-      return controller();
+        return promise;
     }
 
     register (pageID, controller) {
