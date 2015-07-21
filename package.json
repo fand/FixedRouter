@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "$(npm bin)/browserify src/index.js -o index.js -t babelify"
+    "build": "$(npm bin)/babel src/index.js -o index.js"
   },
   "author": "",
   "license": "ISC",
